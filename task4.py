@@ -1,13 +1,13 @@
 from datetime import datetime, timedelta
 
 def get_upcoming_birthdays(users: list[dict[str, str]]) -> list[dict[str, str]]:
-    # pattern is used convert user birthday to date
+    # pattern is used to convert user birthday to date
     birthday_pattern = "%Y.%m.%d"
 
-    # list for mathed birthdays to return
+    # list of mathed birthdays to return
     res = []
 
-    # get today's dau
+    # get today's day
     today = datetime.today().date()
 
     # next line for test only. Uncomment the line to test birthdays with next year
@@ -21,7 +21,7 @@ def get_upcoming_birthdays(users: list[dict[str, str]]) -> list[dict[str, str]]:
         # set currnet year to compare the dates
         birthday_this_year = birthday.replace(year = today.year)
 
-        # if next birthday in next year, add 1 year
+        # if next birthday in the next year, add 1 year
         if birthday_this_year < today:
             birthday_this_year = birthday.replace(year = today.year + 1)
 

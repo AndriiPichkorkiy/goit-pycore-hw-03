@@ -12,13 +12,13 @@ def get_days_from_today(date: str) -> int:
         return "Custom error: input value  is not valid"
 
     # get today's day
-    now = datetime.today()
+    today = datetime.today()
 
     # convert input value to class datetime
     input_date = datetime.strptime(date, "%Y-%m-%d")
 
     # calculate differense
-    time_delta = now - input_date
+    time_delta = today - input_date
 
     # return only days
     return time_delta.days
